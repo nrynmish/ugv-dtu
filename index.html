@@ -134,6 +134,7 @@
             animation: gridMove 20s linear infinite;
         }
 
+
         @keyframes gridMove {
             0% { transform: translate(0, 0); }
             100% { transform: translate(50px, 50px); }
@@ -538,6 +539,25 @@
             background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
         }
 
+        #members {
+            flex-direction: column;
+            padding: 6rem 1rem;
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+        }
+
+        .member-subtitle {
+            grid-column: 1 / -1;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            background: linear-gradient(45deg, var(--gold), var(--light-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: left;
+        }
+
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -582,6 +602,32 @@
             box-shadow: 
                 0 20px 40px rgba(0, 0, 0, 0.5),
                 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .team-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .team-socials a {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .team-socials a:hover {
+            border-color: var(--gold);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+            transform: translateY(-3px);
         }
 
         .team-image {
@@ -1042,6 +1088,32 @@
     </style>
 </head>
 <body>
+    <!-- Social Media Icons -->
+    <svg style="display:none;">
+        <symbol id="icon-instagram" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M7 2C4.243 2 2 4.243 2 7v10c0 
+            2.757 2.243 5 5 5h10c2.757 0 5-2.243 
+            5-5V7c0-2.757-2.243-5-5-5H7zm10 
+            2a3 3 0 013 3v10a3 3 0 01-3 
+            3H7a3 3 0 01-3-3V7a3 3 0 
+            013-3h10zm-5 3a5 5 0 100 
+            10 5 5 0 000-10zm0 2a3 3 
+            0 110 6 3 3 0 010-6zm4.5-.25a1.25 
+            1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
+        </symbol>
+
+        <symbol id="icon-linkedin" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M4.98 3.5C4.98 4.88 
+            3.86 6 2.5 6S0 4.88 0 
+            3.5 1.12 1 2.5 1 4.98 
+            2.12 4.98 3.5zM.5 8h4v13h-4V8zm7.5 
+            0h3.8v1.8h.1c.5-.9 1.8-1.8 
+            3.7-1.8C21 8 22 10.3 22 
+            14.1V21h-4v-6.2c0-1.5 0-3.4-2.1-3.4 
+            -2.1 0-2.4 1.6-2.4 3.3V21h-4V8z"/>
+        </symbol>
+    </svg>
+
     <!-- Animated Background -->
     <div class="background-elements">
         <div class="grid-pattern"></div>
@@ -1133,59 +1205,648 @@
 
         <!-- Team Section -->
         <section class="section" id="team">
-            <h2 class="section-title">Our Curatorial Team</h2>
+            <h2 class="section-title">Team Council</h2>
             <div class="team-grid">
+                <!-- Council -->
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
                     <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <p class="team-role">Captain</p>
+                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
-                    <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <h3 class="team-name">Yuvraj Gupta</h3>
+                    <p class="team-role">Vice-Captain</p>
+                    <p class="team-bio">Working to push the team's autonomous systems capabilities with strong interdisciplinary coordination.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
-                    <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <h3 class="team-name">Akshat Rajwansh</h3>
+                    <p class="team-role">Team Manager</p>
+                    <p class="team-bio">Managing operations, workflow, and inter-team coordination to keep UGV-DTU running efficiently.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
-                    <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <h3 class="team-name">Gatik Gupta</h3>
+                    <p class="team-role">Electrical Head</p>
+                    <p class="team-bio">Developing and maintaining the robot’s electronic systems, power distribution, and sensor integration.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
-                    <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <h3 class="team-name">Hriday Goel</h3>
+                    <p class="team-role">Mechanical Head</p>
+                    <p class="team-bio">Leading mechanical design, chassis architecture, and structural optimization for the UGV.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
-                    <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <h3 class="team-name">Daksh Panchal</h3>
+                    <p class="team-role">Software Head</p>
+                    <p class="team-bio">Building the autonomy stack including perception, planning, and ROS-based integration.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/dakshh.panchal/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/dakshhpanchal/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
-                    <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <h3 class="team-name">Narayan Mishra</h3>
+                    <p class="team-role">Corporate Head</p>
+                    <p class="team-bio">Handling sponsorships, outreach, and communications to support the team’s growth.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="team-card">
                     <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
-                    <h3 class="team-name">Vedant Singh</h3>
-                    <p class="team-role">Team Captain</p>
-                    <p class="team-bio">Leading UGV-DTU in the pursuit of fully autonomous ground mobility. Passionate about robotics, systems engineering, and practical innovation, Kartik drives the team’s vision for “Made in India” autonomy — from mechanical design to ROS-based intelligence.</p>
+                    <h3 class="team-name">Archit Shukla</h3>
+                    <p class="team-role">Electrical Co-Head</p>
+                    <p class="team-bio">Overseeing electrical subsystems including power distribution, wiring, and sensor integration to ensure reliable autonomy.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image: url('https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefanstefancik-91227.jpg')"></div>
+                    <h3 class="team-name">Aryan Sharma</h3>
+                    <p class="team-role">Electrical Co-Head</p>
+                    <p class="team-bio">Overseeing electrical subsystems including power distribution, wiring, and sensor integration to ensure reliable autonomy.</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section class="section" id="members">
+            <h2 class="section-title">Team Members</h2>
+            <div class="team-grid">
+                <h3 class="member-subtitle">Software</h3>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Ankit Kumar Roy</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Darshan M</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Dhruv Bansal</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Kartikay Tayal</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Kanishka</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Lakshya Jindal</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Navya Medak</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Param Sharma</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Shreyansh Agarwal</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Vinayaka Chauhan</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="member-subtitle">Mechanical</h3>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Anusri Yadav</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Arnab Nayak</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Eklavya Singh</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Harshit R Kumar</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Harshit Tokas</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Kartikey</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Prakhar Mishra</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Sameer Tandon</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Saurabh</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Shivam</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Sourabh Jha</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Utkarsh Chandra Bacchal</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <h3 class="member-subtitle">Electrical</h3>
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Anubhav</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Ayush Kumar</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Harshit Tyagi</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Jagdish</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Manaan Tyagi</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Sanchit</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Sarthak Singh</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Siddhesh</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Vishwesh Soni</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+
+                <h3 class="member-subtitle">Corporate</h3>
+                
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Ananya Tripathi</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Apeksha Singh</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Bhuvi Malhotra</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image" style="background-image:url('IMAGE_URL')"></div>
+                    <h3 class="team-name">Shivangi K Jha</h3>
+                    <p class="team-role">Member</p>
+                    <div class="team-socials">
+                        <a href="https://www.instagram.com/vedantsinggh/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-instagram"></use></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/" target="_blank">
+                            <svg width="16" height="16"><use href="#icon-linkedin"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Gallery Section -->
         <section class="section" id="gallery">
             <h2 class="section-title">The Collection</h2>
